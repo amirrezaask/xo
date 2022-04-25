@@ -1,9 +1,9 @@
-const std = @import("std");
+const xo = @cImport({
+    @cInclude("xo.h");
+    @cInclude("stdio.h");
+});
 
 pub fn main() anyerror!void {
-    std.log.info("All your codebase are belong to us.", .{});
-}
-
-test "basic test" {
-    try std.testing.expectEqual(10, 3 + 7);
+    // _ = xo.printf("from c");
+    _ = xo.start();
 }

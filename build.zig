@@ -11,8 +11,11 @@ pub fn build(b: *std.build.Builder) void {
     // between Debug, ReleaseSafe, ReleaseFast, and ReleaseSmall.
     const mode = b.standardReleaseOptions();
 
-    const exe = b.addExecutable("xo", "src/main.zig");
+    const exe = b.addExecutable("xo", "src/main.c");
+    exe.addIncludePath("src");
+    exe.addIncludePath("/opt/homebrew/include");
     exe.linkSystemLibrary("SDL2");
+    exe.linkSystemLibrary("c");
     exe.setTarget(target);
     exe.setBuildMode(mode);
     exe.install();

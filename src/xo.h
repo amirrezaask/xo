@@ -10,7 +10,7 @@ unsigned int turn = 0;
 ///////////////////////////////////////
 //Functions
 void lose(){
-imgSurface = SDL_LoadBMP("/home/amirreza/xo/lose.bmp");
+imgSurface = SDL_LoadBMP("/Users/amirreza/src/github.com/amirrezaask/xo/assets/lose.bmp");
 		imgTexture = SDL_CreateTextureFromSurface(mainRenderer,imgSurface);
 		imgRect.y = 0;
 		imgRect.x = 0;
@@ -23,7 +23,7 @@ imgSurface = SDL_LoadBMP("/home/amirreza/xo/lose.bmp");
 }
 void circle(int x,int y){
 
-		imgSurface = SDL_LoadBMP("/home/amirreza/xo/circle.bmp");
+		imgSurface = SDL_LoadBMP("/Users/amirreza/src/github.com/amirrezaask/xo/assets/circle.bmp");
 		imgTexture = SDL_CreateTextureFromSurface(mainRenderer,imgSurface);
 		imgRect.y = y;
 		imgRect.x = x;
@@ -36,7 +36,7 @@ void circle(int x,int y){
 }
 void cross(int x,int y){
 
-		imgSurface = SDL_LoadBMP("/home/amirreza/xo/cross.bmp");
+		imgSurface = SDL_LoadBMP("/Users/amirreza/src/github.com/amirrezaask/xo/assets/cross.bmp");
 		imgTexture = SDL_CreateTextureFromSurface(mainRenderer,imgSurface);
 		imgRect.y = y;
 		imgRect.x = x;
@@ -129,6 +129,9 @@ int CpuAct(int final_move){
    
    	}
    }
+void salam() {
+    printf("salam");
+}
 //Making A Move Using minimax function
 void cpuMove(int board[9]) {
     int move = -1;
@@ -156,7 +159,7 @@ void cpuMove(int board[9]) {
 //End Of Functions	
 
 //************************************************************
-int main(){
+int run(){
 int player = 1;
 int board[9] = {0,0,0,0,0,0,0,0,0};
 //Create A Window
@@ -164,7 +167,7 @@ window = SDL_CreateWindow("TIC TAC TOE ",SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_U
 //Create A Renderer Acts Like A White Paper
 mainRenderer = SDL_CreateRenderer(window,-1,SDL_RENDERER_ACCELERATED);
 //Creating A Surface >> Address To Photo In HardDrive
-imgSurface = SDL_LoadBMP("/home/amirreza/xo/board.bmp");
+imgSurface = SDL_LoadBMP("/Users/amirreza/src/github.com/amirrezaask/xo/assets/board.bmp");
 //Now Make A Texture >> Enter The Photo To GPU
 imgTexture = SDL_CreateTextureFromSurface(mainRenderer,imgSurface);
 
